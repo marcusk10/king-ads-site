@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>King Ads — HVAC Marketing in Southern Utah</title>
+<meta name="description" content="Marcus King runs Meta and Instagram ad campaigns for HVAC companies in southern Utah. One HVAC company per city. No long contracts.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #0A0A0A;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  section {
+    padding: 80px 0;
+  }
+
+  /* Typography */
+  h1, h2, h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  h1 {
+    font-size: clamp(36px, 6vw, 56px);
+    margin-bottom: 24px;
+  }
+
+  h2 {
+    font-size: clamp(28px, 4.5vw, 40px);
+    margin-bottom: 24px;
+  }
+
+  h3 {
+    font-size: clamp(20px, 3vw, 24px);
+    margin-bottom: 12px;
+  }
+
+  p {
+    color: #9CA3AF;
+    font-size: 17px;
+    margin-bottom: 16px;
+  }
+
+  p.lead {
+    color: #FFFFFF;
+    font-size: 19px;
+    margin-bottom: 32px;
+  }
+
+  .label {
+    font-family: 'Manrope', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #3B82F6;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  strong { color: #FFFFFF; font-weight: 600; }
+  em { color: #9CA3AF; font-style: italic; }
+
+  /* Hero */
+  .hero {
+    padding: 100px 0 80px;
+    text-align: center;
+  }
+
+  .photo-placeholder {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin: 0 auto 32px;
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    border: 2px solid rgba(59,130,246,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #3B82F6;
+    letter-spacing: -0.05em;
+  }
+
+  .hero p.lead {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    display: inline-block;
+    background: #3B82F6;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    margin-top: 8px;
+  }
+
+  .btn-primary:hover {
+    background: #2563EB;
+    transform: translateY(-1px);
+  }
+
+  .btn-primary.large {
+    font-size: 18px;
+    padding: 20px 40px;
+  }
+
+  .sub-cta {
+    color: #6B7280;
+    font-size: 15px;
+    margin-top: 16px;
+    font-style: italic;
+  }
+
+  /* Cards */
+  .card {
+    background: #111111;
+    border: 1px solid rgba(59,130,246,0.15);
+    border-radius: 12px;
+    padding: 32px;
+    transition: border-color 0.2s ease;
+  }
+
+  .card:hover {
+    border-color: rgba(59,130,246,0.4);
+  }
+
+  .card + .card {
+    margin-top: 20px;
+  }
+
+  .card .step-number {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #3B82F6;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  /* Commitment bullets */
+  .commitment-list {
+    list-style: none;
+    margin-top: 24px;
+  }
+
+  .commitment-list li {
+    color: #FFFFFF;
+    font-size: 17px;
+    padding: 14px 0;
+    padding-left: 32px;
+    position: relative;
+    border-bottom: 1px solid rgba(59,130,246,0.08);
+  }
+
+  .commitment-list li:last-child { border-bottom: none; }
+
+  .commitment-list li::before {
+    content: "→";
+    color: #3B82F6;
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+    top: 14px;
+  }
+
+  /* About — looks like a card without being one */
+  .about-block {
+    background: #111111;
+    border-radius: 12px;
+    padding: 48px;
+  }
+
+  .about-block p { color: #D1D5DB; }
+
+  .about-block .king-tag {
+    margin-top: 24px;
+    font-style: italic;
+    color: #6B7280;
+    font-size: 15px;
+  }
+
+  /* Final CTA */
+  .final-cta {
+    text-align: center;
+    background: linear-gradient(180deg, #0A0A0A 0%, #0F172A 100%);
+    border-radius: 16px;
+    padding: 64px 32px;
+    border: 1px solid rgba(59,130,246,0.2);
+  }
+
+  .final-cta h2 { margin-bottom: 16px; }
+  .final-cta p { margin-bottom: 32px; }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #4B5563;
+    font-size: 14px;
+    border-top: 1px solid rgba(59,130,246,0.08);
+  }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    section { padding: 60px 0; }
+    .hero { padding: 80px 0 60px; }
+    .photo-placeholder { width: 110px; height: 110px; font-size: 38px; }
+    .card { padding: 24px; }
+    .about-block { padding: 32px 24px; }
+    .final-cta { padding: 48px 24px; }
+    .btn-primary, .btn-primary.large { width: 100%; padding: 18px; font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="photo-placeholder">MK</div>
+      <h1>I help HVAC owners in southern Utah keep their phone ringing.</h1>
+      <p class="lead">
+        I run Meta and Instagram ad campaigns that fill your schedule with service calls and installs — year-round, including the slow season. I take on one HVAC company per city — once I'm working with you, I won't work with your competitor. No long contracts.
+      </p>
+      <a href="[CALENDLY_LINK_PENDING]" class="btn-primary large">Book a Free Strategy Call</a>
+      <p class="sub-cta">No pitch. Just an honest look at what's possible for your business.</p>
+    </div>
+  </section>
+
+  <!-- 2. WHO I WORK WITH -->
+  <section>
+    <div class="container">
+      <span class="label">Who I work with</span>
+      <h2>One type of business. HVAC companies in southern Utah.</h2>
+      <p>
+        I'm not a generalist agency. I picked HVAC because the work is real, the numbers are clean, and homeowners in St. George, Hurricane, and the rest of the metro need what you sell. When I know your industry inside and out, I can launch campaigns in days, not weeks. No learning curve. No generic ads.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. WHAT I DO -->
+  <section>
+    <div class="container">
+      <span class="label">What I do</span>
+      <h2>Here's exactly what happens when we work together.</h2>
+
+      <div class="card">
+        <div class="step-number">STEP 1</div>
+        <h3>Discovery Call (30 min)</h3>
+        <p>I learn your business, your service area, your goals. No pitch. You walk away with at least three things you can do immediately to improve your marketing — whether we work together or not.</p>
+      </div>
+
+      <div class="card">
+        <div class="step-number">STEP 2</div>
+        <h3>Campaign Build (7 days)</h3>
+        <p>I research your local market, write the ads, build the targeting, set up tracking. You approve everything before it goes live.</p>
+      </div>
+
+      <div class="card">
+        <div class="step-number">STEP 3</div>
+        <h3>Launch + Optimize (ongoing)</h3>
+        <p>I monitor your campaigns daily, kill what's not working, scale what is. You get a simple weekly report. I handle the rest.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. MY COMMITMENT -->
+  <section>
+    <div class="container">
+      <span class="label">My commitment</span>
+      <h2>I take on one HVAC company per city. Here's why.</h2>
+      <p class="lead">
+        Once I'm working with you, I won't work with your competitor. When I take on a client, I'm fully in. I'm checking your campaigns every day. I'm watching what your competitors are running. I'm not managing 50 accounts — I'm managing yours.
+      </p>
+
+      <ul class="commitment-list">
+        <li>Direct access. No account-manager middleman.</li>
+        <li>Daily monitoring of your campaigns.</li>
+        <li>Weekly performance reports — short, numbers-first, no fluff.</li>
+        <li>30-day out. If it's not working in the first month, we end it. No long contracts.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. ABOUT ME -->
+  <section>
+    <div class="container">
+      <span class="label">About me</span>
+      <h2>Hi, I'm Marcus King.</h2>
+
+      <div class="about-block">
+        <p>I run Meta and Instagram ad campaigns for HVAC companies in southern Utah. My job is simple: get your phone ringing with people who need heating or cooling work — and keep it ringing, even in the slow season.</p>
+
+        <p>Here's how I think about this. I only make money when your phone is ringing. If my ads aren't getting you booked jobs, I'm not doing my job. That's why I work with one HVAC company per city — so I'm fully in on your results, not splitting my attention across 50 accounts.</p>
+
+        <p>Most agencies will tell you they care about results. I'll tell you what those results need to look like: a real cost per booked service call, real numbers you can put in a spreadsheet, and a steady lead flow you can plan your week around. If we can't do that for you, we'll figure out why — together — and fix it.</p>
+
+        <p class="king-tag">King is my last name. Not a flex — that's just who I am.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FINAL CTA -->
+  <section>
+    <div class="container">
+      <div class="final-cta">
+        <h2>Ready to see what a real ad system can do for your HVAC business?</h2>
+        <p>Book the call. You'll walk away with at least three things you can do immediately — whether we work together or not.</p>
+        <a href="[CALENDLY_LINK_PENDING]" class="btn-primary large">Book a Free Strategy Call</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    King Ads · Southern Utah · marcus@aiadvertisings.net
+  </footer>
+
+</body>
+</html>
